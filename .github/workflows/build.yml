@@ -19,7 +19,7 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-      - name: Android SDK
+      - name: Install Android SDK
         run: |
           export ANDROID_HOME="$ANDROID_SDK_ROOT"
           SDKMANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
@@ -31,12 +31,12 @@ jobs:
             "platforms;android-35" \
             "build-tools;35.0.0"
 
-      - name: Build
+      - name: Build APK
         run: |
           chmod +x gradlew
           ./gradlew assembleDebug --no-daemon
 
-      - name: APK
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: SLICE-debug
