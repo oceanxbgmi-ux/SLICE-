@@ -18,10 +18,18 @@ jobs:
           java-version: '21'
 
       - uses: android-actions/setup-android@v3
+        with:
+          cmdline-tools-version: '12266719'
 
-      - run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+      - name: Accept licenses and install SDK
+        run: |
+          yes | sdkmanager --licenses > /dev/null
+          sdkmanager "platforms;android-35" "build-tools;35.0.0" "platform-tools"
 
-      - run: chmod +x gradlew && ./gradlew assembleDebug --no-daemon
+      - name: Build APK
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
 
       - uses: actions/upload-artifact@v4
         with:
