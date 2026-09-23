@@ -17,21 +17,25 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-      - uses: android-actions/setup-android@v3
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
         with:
           cmdline-tools-version: '12266719'
+          accept-android-sdk-licenses: false
 
-      - name: Accept licenses and install SDK
-        run: |
-          yes | sdkmanager --licenses > /dev/null
-          sdkmanager "platforms;android-35" "build-tools;35.0.0" "platform-tools"
+      - name: Accept licenses
+        run: yes | sdkmanager --licenses || true
+
+      - name: Install Android SDK
+        run: sdkmanager "platforms;android-35" "build-tools;35.0.0" "platform-tools"
 
       - name: Build APK
         run: |
           chmod +x gradlew
           ./gradlew assembleDebug --no-daemon
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
         with:
           name: SLICE-debug
           path: app/build/outputs/apk/debug/app-debug.apk
