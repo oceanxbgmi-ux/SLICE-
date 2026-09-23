@@ -1,0 +1,2 @@
+com.slice.remote
+style AppTheme

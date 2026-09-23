@@ -1,0 +1,8 @@
+com.slice.remote.app-pngs-0 /data/data/com.termux/files/home/SLICE/app/build/generated/res/pngs/debug
+com.slice.remote.app-updated_navigation_xml-1 /data/data/com.termux/files/home/SLICE/app/build/generated/updated_navigation_xml/debug
+com.slice.remote.app-packageDebugResources-2 /data/data/com.termux/files/home/SLICE/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.slice.remote.app-packageDebugResources-3 /data/data/com.termux/files/home/SLICE/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.slice.remote.app-debug-4 /data/data/com.termux/files/home/SLICE/app/build/intermediates/merged_res/debug/mergeDebugResources
+com.slice.remote.app-debug-5 /data/data/com.termux/files/home/SLICE/app/src/debug/res
+com.slice.remote.app-main-6 /data/data/com.termux/files/home/SLICE/app/src/main/res
+gradleHome-0 /data/data/com.termux/files/home/.gradle
